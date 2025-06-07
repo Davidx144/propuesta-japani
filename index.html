@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,18 +28,58 @@
         .fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
+
+        /* Styles for the modal message */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #1F2937; /* gray-800 */
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: #D1D5DB; /* gray-400 */
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
 
     <!-- Header - Improved with ARIA role -->
-    <header role="banner" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700 rounded-b-lg">
+    <header role="banner" class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700 rounded-b-lg shadow-xl">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">
                 <span class="text-indigo-400">Orquest</span><span class="text-pink-400">IA</span>
             </h1>
             <!-- Added aria-label for better accessibility -->
-            <a href="#inversion" aria-label="Ver Propuesta Económica Detallada" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105">Ver Propuesta Económica</a>
+            <a href="#inversion" aria-label="Ver Propuesta Económica Detallada" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md">Ver Propuesta Económica</a>
         </div>
     </header>
 
@@ -86,7 +126,7 @@
             </div>
         </section>
         
-        <!-- Modules Section - Emphasized Integration -->
+        <!-- Modules Section - Emphasized Integration and interactivity (title attribute) -->
         <section role="region" aria-labelledby="modules-title" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6 fade-in">
                 <div class="text-center mb-16">
@@ -94,36 +134,44 @@
                     <p class="text-gray-400 mt-4 max-w-3xl mx-auto">Diseñaremos y construiremos el ecosistema JAPANI DIGITAL a través de **módulos especializados de última generación**, diseñados para interactuar perfectamente y entregar valor continuo en cada etapa de su transformación.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Módulo Card -->
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md">
+                    <!-- Módulo Card - Added title attribute for interactivity -->
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md"
+                         title="Centraliza la gestión de productos y facilita la venta B2B para sus clientes.">
                         <div class="bg-indigo-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
                         <div><h4 class="font-bold">Ventas y Catálogo</h4><p class="text-sm text-gray-400">Experiencia B2B Superior</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md"
+                         title="Automatiza la gestión de créditos y el seguimiento de la cartera para una salud financiera óptima.">
                         <div class="bg-indigo-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
                         <div><h4 class="font-bold">Crédito y Cartera</h4><p class="text-sm text-gray-400">Flujo Financiero Inteligente</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md"
+                         title="Sistema de gestión de almacenes (WMS) para una operatividad logística sin errores y optimizada.">
                         <div class="bg-indigo-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
                         <div><h4 class="font-bold">Logística (WMS)</h4><p class="text-sm text-gray-400">Optimización de Bodega</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-indigo-500 transition-colors duration-300 shadow-md"
+                         title="Gestión de despachos eficiente e integración con transportadoras para la última milla.">
                         <div class="bg-indigo-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-400"><path d="M2 9.5c-1.28.2-2 1.48-2 2.5v4c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3v-4c0-1.02-.72-2.3-2-2.5"/><path d="M6 19V8c0-3.31 2.69-6 6-6s6 2.69 6 6v11"/><path d="M14 9h-4"/><path d="M12 19v-5"/></svg></div>
                         <div><h4 class="font-bold">Despachos Inteligentes</h4><p class="text-sm text-gray-400">Gestión de Última Milla</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-pink-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-pink-500 transition-colors duration-300 shadow-md"
+                         title="CRM impulsado por IA para un entendimiento 360 del cliente y gestión de interacciones.">
                         <div class="bg-pink-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><path d="M12 8V4H8"/><rect x="4" y="12" width="8" height="8" rx="2"/><path d="m9 13 2.5 2.5L14 13"/><path d="M20 4v4h-4"/><path d="m15 14 2.5 2.5L20 14"/></svg></div>
                         <div><h4 class="font-bold">CRM + IA Avanzado</h4><p class="text-sm text-gray-400">Inteligencia de Cliente 360</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-pink-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-pink-500 transition-colors duration-300 shadow-md"
+                         title="Herramientas de automatización para campañas de marketing personalizadas y efectivas.">
                         <div class="bg-pink-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><path d="M2 8c0-2.2.7-4.3 2-6"/><path d="M22 8a10 10 0 0 0-2-6"/></svg></div>
                         <div><h4 class="font-bold">Marketing Automation</h4><p class="text-sm text-gray-400">Comunicación Personalizada</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-teal-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-teal-500 transition-colors duration-300 shadow-md"
+                         title="Plataforma para gestionar y expandir su red de socios, impulsando ventas indirectas.">
                         <div class="bg-teal-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
                         <div><h4 class="font-bold">Portal de Socios Aliados</h4><p class="text-sm text-gray-400">Expansión Venta Indirecta</p></div>
                     </div>
-                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-teal-500 transition-colors duration-300 shadow-md">
+                    <div class="bg-gray-800 p-6 rounded-xl flex items-center space-x-4 border border-transparent hover:border-teal-500 transition-colors duration-300 shadow-md"
+                         title="Implementación de programas de lealtad para recompensar y retener a sus clientes más valiosos.">
                         <div class="bg-teal-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-400"><path d="M12 21l-8-4.5v-9l8 4.5 8-4.5v9L12 21z"/><path d="M12 12l8-4.5"/><path d="M12 12v9"/><path d="M12 12L4 7.5"/><path d="M16 5.25l-8 4.5"/></svg></div>
                         <div><h4 class="font-bold">Programas de Fidelización</h4><p class="text-sm text-gray-400">Retención y Recompensas</p></div>
                     </div>
@@ -197,7 +245,7 @@
             </div>
         </section>
 
-        <!-- Investment Section - Adjusted Chart Data and Stronger Messaging -->
+        <!-- Investment Section - Adjusted Module Costs and Maintained Chart Proportions -->
         <section id="inversion" role="region" aria-labelledby="investment-title" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6 fade-in">
                 <div class="text-center mb-16">
@@ -212,15 +260,15 @@
                                 <span class="font-semibold text-gray-400 col-span-2">Módulo</span>
                                 <span class="font-semibold text-gray-400 text-right">Inversión</span>
                             </div>
-                            <!-- Items -->
+                            <!-- Items - Adjusted costs -->
                             <div class="grid grid-cols-3 gap-4">
                                 <span class="col-span-2">Autenticación y Onboarding</span><span class="font-bold text-right">$4,000.00</span>
                             </div>
                             <div class="grid grid-cols-3 gap-4">
-                                <span class="col-span-2">Catálogo de Productos</span><span class="font-bold text-right">$9,000.00</span>
+                                <span class="col-span-2">Catálogo de Productos</span><span class="font-bold text-right">$8,000.00</span> <!-- Reduced -->
                             </div>
                             <div class="grid grid-cols-3 gap-4">
-                                <span class="col-span-2">Carrito de Compras y Pagos</span><span class="font-bold text-right">$9,000.00</span>
+                                <span class="col-span-2">Carrito de Compras y Pagos</span><span class="font-bold text-right">$8,000.00</span> <!-- Reduced -->
                             </div>
                             <div class="grid grid-cols-3 gap-4">
                                 <span class="col-span-2">Módulo de Crédito y Cartera</span><span class="font-bold text-right">$8,000.00</span>
@@ -244,10 +292,10 @@
                                 <span class="col-span-2">Postventa y Garantías</span><span class="font-bold text-right">$4,307.50</span>
                             </div>
                             <div class="grid grid-cols-3 gap-4">
-                                <span class="col-span-2">CRM Inteligente + IA</span><span class="font-bold text-right">$8,500.00</span>
+                                <span class="col-span-2">CRM Inteligente + IA</span><span class="font-bold text-right">$9,500.00</span> <!-- Increased -->
                             </div>
                             <div class="grid grid-cols-3 gap-4">
-                                <span class="col-span-2">Marketing, Socios y Fidelización</span><span class="font-bold text-right">$8,661.50</span>
+                                <span class="col-span-2">Marketing, Socios y Fidelización</span><span class="font-bold text-right">$9,661.50</span> <!-- Increased -->
                             </div>
                         </div>
                         <div class="border-t border-gray-600 mt-6 pt-6">
@@ -337,15 +385,13 @@
             </div>
         </section>
 
-        <!-- CTA Section - Stronger, Action-Oriented Language -->
-        <section class="py-20 bg-gray-800 rounded-xl mx-4 my-8 shadow-xl">
+        <!-- CTA Section with Contact Form -->
+        <section id="contact-form" role="region" aria-labelledby="cta-title" class="py-20 bg-gray-800 rounded-xl mx-4 my-8 shadow-xl">
             <div class="container mx-auto px-6 text-center fade-in">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-black text-white">¡Construyamos Juntos el Futuro de JAPANI DIGITAL!</h2>
-                    <p class="text-gray-300 mt-4 text-lg">Esta propuesta no es solo un documento, es el primer paso hacia una **transformación digital sin precedentes**. En OrquestIA, estamos listos para ser su socio tecnológico estratégico y asegurar el éxito rotundo de JAPANI DIGITAL.</p>
-                    <div class="mt-8">
-                        <a href="#" aria-label="Contáctenos para dar el siguiente paso" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg text-xl transition-transform duration-300 inline-block transform hover:scale-105 shadow-xl">Contáctenos y Comencemos el Sprint 1</a>
-                    </div>
+                    <h2 id="cta-title" class="text-4xl font-black text-white mb-4">¡Construyamos Juntos el Futuro de JAPANI DIGITAL!</h2>
+                    <p class="text-gray-300 mt-4 text-lg mb-8">Esta propuesta no es solo un documento, es el primer paso hacia una **transformación digital sin precedentes**. En OrquestIA, estamos listos para ser su socio tecnológico estratégico y asegurar el éxito rotundo de JAPANI DIGITAL.</p>
+                
                 </div>
             </div>
         </section>
@@ -358,6 +404,15 @@
         </div>
     </footer>
 
+    <!-- Modal Message Structure -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="close-button">&times;</button>
+            <h3 class="text-2xl font-bold mb-4 text-white">¡Mensaje Enviado con Éxito!</h3>
+            <p class="text-gray-300">Gracias por tu interés. Nos pondremos en contacto contigo a la brevedad.</p>
+        </div>
+    </div>
+
     <script>
         // Chart.js script for Investment Chart
         // Adjusted data for investment distribution: Finanzas y Operaciones (30%), rest distributed to others
@@ -367,10 +422,7 @@
             data: {
                 labels: ['Comercio y Cliente', 'Finanzas y Operaciones', 'Inteligencia y Crecimiento'],
                 datasets: [{
-                    // New Data: [Comercio y Cliente, Finanzas y Operaciones, Inteligencia y Crecimiento]
-                    // Finanzas y Operaciones = 30% of 84969 = 25490.7
-                    // Remaining = 84969 - 25490.7 = 59478.3
-                    // Distributed based on original proportions for Comercio y Cliente and Inteligencia y Crecimiento
+                    // Data values to maintain the strategic distribution, with Finanzas y Operaciones at ~30%
                     data: [33411.7, 25490.7, 26066.6], 
                     backgroundColor: [
                         '#4338CA', // Indigo
@@ -545,6 +597,36 @@
         `;
         document.head.appendChild(style);
 
+        // Form submission and Modal handling
+        const contactForm = document.querySelector('form');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModalButton = document.getElementById('closeModal');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // In a real application, you would send this data to a server
+            console.log('Formulario enviado:', {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            });
+
+            // Show the modal message
+            modalOverlay.classList.add('open');
+            contactForm.reset(); // Clear the form
+        });
+
+        closeModalButton.addEventListener('click', function() {
+            modalOverlay.classList.remove('open');
+        });
+
+        // Close modal if clicking outside the content
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                modalOverlay.classList.remove('open');
+            }
+        });
     </script>
 </body>
 </html>
