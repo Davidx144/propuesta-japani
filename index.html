@@ -253,7 +253,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 id="modules-title" class="section-title text-white">Objeto del Contrato: Módulos a Desarrollar</h2>
-                    <p class="text-gray-400 mt-4 max-w-3xl mx-auto">El corazón del proyecto es la construcción de **12 módulos funcionales interconectados**. Cada uno está diseñado para optimizar un área crítica del negocio, desde la autenticación de usuarios hasta el marketing estratégico y la fidelización.</p>
+                    <p class="text-gray-400 mt-4 max-w-3xl mx-auto">El corazón del proyecto es la construcción de 12 módulos funcionales interconectados. Cada uno está diseñado para optimizar un área crítica del negocio, desde la autenticación de usuarios hasta el marketing estratégico y la fidelización.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Module 1 -->
@@ -267,8 +267,8 @@
                         </button>
                         <div id="module1Details" class="expandable-content text-gray-400 text-sm">
                             <ul class="list-disc list-inside space-y-1">
-                                <li>El cliente accede por App, Web, asesor, código QR o socio aliado.</li>
-                                <li>El sistema lo reconoce y clasifica automáticamente como distribuidor, almacén, taller, revendedor, cliente final o socio aliado.</li>
+                                <li>El cliente accede por App, Web, asesor o socio aliado.</li>
+                                <li>El sistema lo reconoce y clasifica como distribuidor, almacén, taller, revendedor, cliente final o socio aliado.</li>
                                 <li>Se activa un onboarding automático según el perfil del usuario.</li>
                             </ul>
                         </div>
@@ -287,8 +287,8 @@
                             <ul class="list-disc list-inside space-y-1">
                                 <li>Visual personalizada del catálogo según el tipo de usuario.</li>
                                 <li>Acceso a precios asignados y disponibilidad de stock en tiempo real.</li>
-                                <li>Permite pedidos rápidos desde App, Web o con apoyo del asesor.</li>
-                                <li>Integración de promociones, recompensas y seguimiento de ventas.</li>
+                                <li>Permite pedidos rápidos desde la Web App o con apoyo del asesor.</li>
+                                <li>Integración de promociones  y seguimiento de ventas.</li>
                             </ul>
                         </div>
                     </div>
@@ -323,8 +323,9 @@
                         </button>
                         <div id="module4Details" class="expandable-content text-gray-400 text-sm">
                             <ul class="list-disc list-inside space-y-1">
-                                <li>Validación automática de cupo de crédito contra el ERP.</li>
-                                <li>Integración con plataformas como ADIS, SECREDITO, COVINOC para validaciones.</li>
+                                <li>Integración con la plataforma Odoo mediante APIs y su modulo de cartera.</li>
+                                <li>Integración con el modulo de tesoreria interno de JAPANI.</li>
+                                <li>Integración con plataformas como ADISo o sistecredito, para validaciones.</li>
                                 <li>Comprobantes de transferencia aprobados vía IA OCR o manualmente por el área de cartera.</li>
                                 <li>Panel visual para el cliente con información de cupos usados, vencimientos, pagos en mora y riesgo.</li>
                                 <li>La IA proporciona scoring de riesgo y sugiere acciones de crédito.</li>
@@ -364,7 +365,7 @@
                                 <li>El coordinador logístico visualiza todos los pedidos activos.</li>
                                 <li>Asignación automática de picking según SKU, zona y bodega.</li>
                                 <li>Procesos de verificación y packing con checklist digital para cero errores.</li>
-                                <li>Cálculo automático de peso y volumen, y generación de guías.</li>
+                                <li>Cálculo automático y generación de guías.</li>
                                 <li>Trazabilidad completa de cada etapa: picking, packing y despacho.</li>
                             </ul>
                         </div>
@@ -402,7 +403,6 @@
                                 <li>Agrupación automática de pedidos por zona y tipo de envío para optimización de rutas.</li>
                                 <li>Generación de guías automáticas vía API con transportadoras integradas.</li>
                                 <li>Asignación automática de transportadora según peso, zona y urgencia del pedido.</li>
-                                <li>El cliente recibe notificación de envío y puede descargar su factura electrónica directamente.</li>
                                 <li>Confirmación automática de entrega por parte del cliente con trazabilidad completa.</li>
                             </ul>
                         </div>
@@ -451,12 +451,13 @@
                         <button class="module-card-button" onclick="toggleModuleDetails(this, 'module11Details')">
                             <div class="flex items-center space-x-4">
                                 <div class="bg-pink-900 p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><path d="M12 8V4H8"/><rect x="4" y="12" width="8" height="8" rx="2"/><path d="m9 13 2.5 2.5L14 13"/><path d="M20 4v4h-4"/><path d="m15 14 2.5 2.5L20 14"/></svg></div>
-                                <div><h4 class="font-bold text-white">11. CRM Inteligente + IA</h4><p class="text-sm text-gray-400">Inteligencia de Cliente 360</p></div>
+                                <div><h4 class="font-bold text-white">11. Dashboard Inteligente + IA</h4><p class="text-sm text-gray-400">Inteligencia de Cliente 360</p></div>
                             </div>
                             <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300" data-arrow="module11Details" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div id="module11Details" class="expandable-content text-gray-400 text-sm">
                             <ul class="list-disc list-inside space-y-1">
+                                <li>Dashboard personalizado para el administrador que contiene métricas clave de rendimiento.</li>
                                 <li>Registro total de cada actividad e interacción del cliente en su ficha.</li>
                                 <li>La IA analiza patrones de abandono, frecuencia de compra e intención de recompra/fuga.</li>
                                 <li>El sistema sugiere al asesor acciones específicas para contactar, ofrecer promociones o fidelizar al cliente.</li>
@@ -804,10 +805,10 @@
 
         <!-- Contract PDF and Digital Signature Section (from infografia.html) -->
         <section id="documento" class="py-20 bg-gray-800 rounded-xl mx-4 my-8 shadow-xl fade-in">
-            <h2 class="text-3xl font-black text-white text-center mb-8">Contrato Oficial y Firma Digital</h2>
+            <h2 class="text-3xl font-black text-white text-center mb-8">Contrato Oficial</h2>
             <div id="contract-document" class="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700">
                 <h3 class="text-xl font-bold text-indigo-400 mb-4">Visualización del Documento Anexo</h3>
-                <p class="text-gray-400 mb-6">A continuación se presenta el documento del contrato para su revisión. Puede descargarlo o firmarlo digitalmente utilizando las opciones provistas.</p>
+                <p class="text-gray-400 mb-6">A continuación se presenta el documento del contrato para su revisión.</p>
                 
                 <div class="border border-gray-700 rounded-lg overflow-hidden mb-8">
                     <!-- Adjusted iframe src to point to contrato.pdf in root -->
@@ -825,12 +826,6 @@
                         Descargar Contrato Firmado
                     </a>
 
-                    <button onclick="abrirModalFirma()" class="inline-block bg-pink-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-pink-500 transition-transform transform hover:scale-105">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m2 0a2 2 0 100-4H7a2 2 0 100 4m0 0v6m6-6v6" />
-                        </svg>
-                        Firmar Digitalmente
-                    </button>
                 </div>
             </div>
         </section>
@@ -851,12 +846,11 @@
                         </button>
                         <div id="techStackDetails" class="mt-4 text-gray-400 expandable-content">
                             <ul class="list-disc list-inside space-y-1">
-                                <li><strong>Backend:</strong> Node.js (NestJS) + Prisma ORM + PostgreSQL</li>
+                                <li><strong>Backend:</strong> Node.js (NestJS) + Modulos Python + PostgreSQL</li>
                                 <li><strong>Frontend Web:</strong> React + Next.js</li>
-                                <li><strong>App Móvil:</strong> React Native</li>
                                 <li><strong>Cache:</strong> Redis</li>
                                 <li><strong>Notificaciones:</strong> WebSocket + Firebase</li>
-                                <li><strong>IA / OCR:</strong> OpenAI GPT-4, Azure Cognitive Services</li>
+                                <li><strong>IA / OCR:</strong> OpenAI GPT-4.5, Azure Cognitive Services</li>
                                 <li><strong>Infraestructura:</strong> Docker, Kubernetes, CI/CD GitHub Actions</li>
                             </ul>
                         </div>
@@ -865,7 +859,7 @@
                     <!-- Folder Architecture -->
                     <div class="bg-gray-800 p-6 rounded-lg shadow-md border border-gray-700">
                         <button class="flex justify-between items-center w-full text-left font-bold text-xl text-pink-400" onclick="toggleDetails('folderArchitectureDetails')">
-                            <span>Arquitectura de Carpetas</span>
+                            <span>Arquitectura de Carpetas (Sujeta a cambios) </span>
                             <svg class="w-6 h-6 text-gray-400 transform transition-transform duration-300" id="folderArchitectureDetailsArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
                         <div id="folderArchitectureDetails" class="mt-4 text-gray-400 expandable-content">
@@ -873,8 +867,8 @@
 /
 ├── apps/
 │   ├── api/                      # Backend principal NestJS
-│   ├── admin-dashboard/         # Panel administrativo en React
-│   └── mobile-app/              # App móvil para clientes y socios
+│   └── admin-dashboard/         # Panel administrativo en React
+│            
 │
 ├── libs/
 │   ├── auth/                    # Módulo de autenticación y autorización
@@ -996,8 +990,7 @@
                                 <li>Webhook con ERP para sincronización de cartera y facturación</li>
                                 <li>Webhook de PSE y pasarelas para validación inmediata de pago</li>
                                 <li>Conexión con APIs de guías de Coordinadora, Envía, Redetrans</li>
-                                <li>Envío de notificaciones por WhatsApp, App, email y panel</li>
-                                <li>OCR para lectura de comprobantes con IA</li>
+                                <li>Envío de notificaciones por WhatsApp, email y panel</li>
                             </ul>
                         </div>
                     </div>
@@ -1042,7 +1035,7 @@
             <div class="container mx-auto px-6 text-center">
                 <div class="max-w-4xl mx-auto">
                     <h2 id="cta-title" class="text-4xl font-black text-white mb-4">¡Construyamos Juntos el Futuro de JAPANI DIGITAL!</h2>
-                    <p class="text-gray-300 mt-4 text-lg mb-8">Esta propuesta no es solo un documento, es el primer paso hacia una **transformación digital sin precedentes**. En OrquestIA, estamos listos para ser su socio tecnológico estratégico y asegurar el éxito rotundo de JAPANI DIGITAL.</p>
+                    <p class="text-gray-300 mt-4 text-lg mb-8">Esta propuesta no es solo un documento, es el primer paso hacia una transformación digital sin precedentes. En OrquestIA, estamos listos para ser su socio tecnológico estratégico y asegurar el éxito rotundo de JAPANI DIGITAL.</p>
                 </div>
             </div>
         </section>
@@ -1050,7 +1043,7 @@
 
     <footer class="bg-gray-900 border-t border-gray-700 rounded-t-lg">
         <div class="container mx-auto px-6 py-6 text-center text-gray-400">
-            <p>&copy; 2024 OrquestIA. Propuesta e Infografía del Contrato preparada exclusivamente para JAPANI DIGITAL.</p>
+            <p>&copy; 2025 OrquestIA. Propuesta e Infografía del Contrato preparada exclusivamente para JAPANI DIGITAL.</p>
             <p class="text-sm mt-2">Medellín, Colombia</p>
         </div>
     </footer>
